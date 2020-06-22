@@ -6,8 +6,8 @@
 
     <data>
         <variable
-            name="userData"
-            type="com.example.login.model.UserData" />
+            name="userLogin"
+            type="com.example.login.model.LoginUser" />
     </data>
 
     <LinearLayout
@@ -25,8 +25,8 @@
             android:id="@+id/textViewUserId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@={userData.id}"
             tools:text="Bob"/>
+<!--            android:text="@={userLogin.id}"/>-->
 
     </LinearLayout>
 </layout>

@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -40,5 +41,8 @@ dependencies {
     // Lifecycle components
     def life_versions = "1.1.1"
     implementation "android.arch.lifecycle:extensions:$life_versions"
-    annotationProcessor "android.arch.lifecycle:compiler:$life_versions"
+//    annotationProcessor "android.arch.lifecycle:compiler:$life_versions"
+
+    // Bindable
+    kapt "com.android.databinding:compiler:3.1.4"
 }

@@ -3,6 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
+
+    <data>
+        <variable
+            name="loginUser"
+            type="com.example.login.model.LoginUser" />
+        <variable
+            name="loginVM"
+            type="com.example.login.viewmodel.LoginViewModel" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,20 +23,23 @@
             android:id="@+id/editTextId"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:hint="id" />
+            android:hint="id"
+            app:textchan="@={loginUser.userId}"/>
 
         <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:hint="password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:text="@={loginUser.userPassword}"/>
 
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="login" />
+            android:text="login"
+            android:onClick="@{()->loginVM.login(loginUser.userId, loginUser.userPassword)"/>
 
         <ProgressBar
             android:id="@+id/progressBarLogin"
